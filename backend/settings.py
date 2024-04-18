@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from dotenv import load_dotenv
 from pathlib import Path
 import os
+from django.core.management import call_command
+from django.core.servers.basehttp import get_internal_wsgi_application
 
 load_dotenv()
 
@@ -26,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -113,6 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+call_command('runserver', '0.0.0.0:{}'.format(os.environ.get('PORT', 8000)), '--noreload')
+application = get_internal_wsgi_application()
 
 PORT = int(os.environ.get("PORT", 8000))
 
