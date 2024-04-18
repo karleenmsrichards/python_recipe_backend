@@ -2,4 +2,4 @@ Django==3.2.12
 requests==2.26.0
 python-dotenv
 djangorestframework
-
+django-cors-headers
