@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 PORT = int(os.environ.get("PORT", 8000))
 
-ALLOWED_HOSTS = ['https://python-recipe-backend.onrender.com']
+ALLOWED_HOSTS = ['python-recipe-backend.onrender.com']
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
