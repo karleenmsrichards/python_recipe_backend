@@ -9,12 +9,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-API_KEY = os.getenv('API_KEY')
+APP_ID = os.getenv('APP_ID')
+APP_KEY = os.getenv('APP_KEY')
 
 def recipe_search(ingredient):
-    app_id = SECRET_KEY
-    app_key = API_KEY
+    app_id = APP_ID
+    app_key = APP_KEY
     
     url = 'https://api.edamam.com/api/recipes/v2?type=public&q={}&app_id={}&app_key={}%09&random=true'.format(
         ingredient, app_id, app_key
