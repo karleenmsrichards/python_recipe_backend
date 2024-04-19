@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from dotenv import load_dotenv
 from pathlib import Path
-import os
-from django.core.servers.basehttp import get_internal_wsgi_application
-import os
 
 load_dotenv()
 
@@ -115,10 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-application = get_internal_wsgi_application()
-
-PORT = int(os.environ.get("PORT", 8000))
 
 ALLOWED_HOSTS = ['python-recipe-backend.onrender.com']
 
